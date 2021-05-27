@@ -14,7 +14,8 @@ const run = async () => {
     if (action == "put") {
       const putParams = {
         Name: paramName,
-        Value: paramValue
+        Value: paramValue,
+        Overwrite: true
       };
 
       console.log(`Putting parameter ${paramName} with value ${paramValue} in region ${region}`);
