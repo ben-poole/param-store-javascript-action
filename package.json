@@ -1,0 +1,25 @@
+{
+  "name": "param-store-javascript-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ben-poole/param-store-javascript-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ben-poole/param-store-javascript-action/issues"
+  },
+  "homepage": "https://github.com/ben-poole/param-store-javascript-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.3.0",
+    "@actions/github": "^5.0.0",
+    "aws-sdk": "^2.916.0"
+  }
+}

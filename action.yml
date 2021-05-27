@@ -1,0 +1,20 @@
+name: 'AWS SSM Parameter Store Helper'
+description: 'Get and Put parameters in AWS SSM Parameter Store'
+inputs:
+  action:
+    description: "'get' or 'put'"
+    required: true
+    default: "get"
+  param-name:
+    description: "The name of the parameter to Get or Put"
+    required: true
+  param-value:
+    description: "The value of the parameter to set (Put only)"
+  region:
+    default: "eu-west-1"
+outputs:
+  param-value: 
+    description: 'The value of the parameter'
+runs:
+  using: 'node12'
+  main: 'index.js'
