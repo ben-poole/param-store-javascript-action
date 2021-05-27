@@ -1,7 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const AWS = require('aws-sdk'); 
-const ssm = new AWS.SSM({region: 'us-east-1'});
 
 const run = async () => {
 
@@ -10,8 +9,7 @@ const run = async () => {
     const paramName = core.getInput('param-name');
     const paramValue = core.getInput('param-value');
     const region = core.getInput('region');
-
-    AWS.config.update({region: region});
+    const ssm = new AWS.SSM({region: region});
 
     if (action == "put") {
       // @todo
@@ -22,7 +20,7 @@ const run = async () => {
       WithDecryption: false
     };
 
-    console.log(`Getting parameter ${paramValue}!`);
+    console.log(`Getting parameter ${paramName} in region ${region}`);
     const param = await ssm.getParameter(params).promise();
     console.log(`${param.Parameter.Name} = ${param.Parameter.Value}`); 
 
