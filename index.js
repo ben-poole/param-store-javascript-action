@@ -12,7 +12,13 @@ const run = async () => {
     const ssm = new AWS.SSM({region: region});
 
     if (action == "put") {
-      // @todo
+      const putParams = {
+        Name: paramName,
+        Value: paramValue
+      };
+
+      console.log(`Putting parameter ${paramName} with value ${paramValue} in region ${region}`);
+      await ssm.putParameter(putParams).promise();
     }
 
     const params = {
